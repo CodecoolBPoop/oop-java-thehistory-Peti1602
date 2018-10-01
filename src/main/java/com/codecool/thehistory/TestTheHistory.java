@@ -62,44 +62,58 @@ public class TestTheHistory {
         result = runFunctionalityTest(theHistory, sourceText, "me", "HAPPY FUN");
         if (!"replace replace HAPPY FUN replace HAPPY FUN HAPPY FUN HAPPY FUN replace HAPPY FUN HAPPY FUN".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
-        }
+        } 
 
         result = runFunctionalityTest(theHistory, sourceText, "me me", "SUPER HAPPY FUN");
         if (!"replace replace me replace SUPER HAPPY FUN me replace SUPER HAPPY FUN".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 5");
         }
 
         result = runFunctionalityTest(theHistory, sourceText, "me", "SUPER me FUN");
         if (!"replace replace SUPER me FUN replace SUPER me FUN SUPER me FUN SUPER me FUN replace SUPER me FUN SUPER me FUN"
                 .equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 6");
         }
 
         result = runFunctionalityTest(theHistory, sourceText, "me replace me", "AWE SUPER HAPPY FUN");
         if (!"replace replace AWE SUPER HAPPY FUN me AWE SUPER HAPPY FUN me".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 7");
         }
 
         // remove words from the text
         result = runFunctionalityTest(theHistory, sourceText, "me me me", "REPLACE");
         if (!"replace replace me replace REPLACE replace me me".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 8");
         }
 
         result = runFunctionalityTest(theHistory, sourceText, "replace replace", "REPLACE");
         if (!"REPLACE me replace me me me replace me me".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 9");
         }
 
         result = runFunctionalityTest(theHistory, sourceText, sourceText, "REPLACE");
         if (!"REPLACE".equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 10");
         }
 
         // no match -> nothing changed
         result = runFunctionalityTest(theHistory, sourceText, "cant find", "cant change");
         if (!sourceText.equals(result)) {
             System.out.println("replace() IS NOT WORKING AS EXPECTED!");
+        } else {
+            System.out.println("ok 11");
         }
     }
 
